@@ -1,11 +1,11 @@
 class Block
 
   def initialize(blockIndex, previousBlockHash, timestamp, data, blockHash)
-    @index = blockIndex
+    @blockIndex = blockIndex
     @previousBlockHash = previousBlockHash
     @timestamp = timestamp
     @data = data
-    @hash = blockHash
+    @blockHash = blockHash
   end
 
   def blockIndex
