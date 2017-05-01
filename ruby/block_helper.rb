@@ -14,4 +14,8 @@ module BlockHelper
       return false
     end
   end
+
+  def calculate_block_hash(block)
+    Digest::SHA256.hexdigest(block.block_index.to_s, block.previous_block_hash, block.timestamp, block.data)
+  end
 end
