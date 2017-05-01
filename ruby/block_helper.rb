@@ -5,8 +5,8 @@ module BlockHelper
 
   def valid_new_block?(new_block, previous_block)
     conditions = {
-      (new_block.blockIndex == (previous_block.blockIndex + 1)) => "Invalid index",
-      (previous_block.blockHash == new_block.previousBlockHash) => "Invalid previous block hash"
+      (new_block.block_index == (previous_block.block_index + 1)) => "Invalid index",
+      (previous_block.block_hash == new_block.previous_block_hash) => "Invalid previous block hash"
       # (calculate_block_hash == new_block.blockHash) => "Invalid block hash"
     }
     conditions.each do |k,v|

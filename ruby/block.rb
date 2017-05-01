@@ -1,19 +1,19 @@
 class Block
 
-  def initialize(blockIndex, previousBlockHash, timestamp, data, blockHash)
-    @blockIndex = blockIndex
-    @previousBlockHash = previousBlockHash
+  def initialize(block_index, previous_block_hash, timestamp, data, block_hash)
+    @block_index = blockIndex
+    @previous_block_hash = previous_block_hash
     @timestamp = timestamp
     @data = data
-    @blockHash = blockHash
+    @block_hash = block_hash
   end
 
-  def blockIndex
-    @blockIndex
+  def block_index
+    @block_index
   end
 
-  def previousBlockHash
-    @previousBlockHash
+  def previous_block_hash
+    @previous_block_hash
   end
 
   def timestamp
@@ -24,7 +24,7 @@ class Block
     @data
   end
 
-  def blockHash
-    @blockHash
+  def block_hash
+    @block_hash
   end
 end
