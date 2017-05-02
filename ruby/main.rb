@@ -1,14 +1,21 @@
 require 'digest'
+require 'sinatra'
+require 'json'
+require 'active_record'
 
 require_relative 'block'
 require_relative 'block_helper'
-require_relative 'hash_helper'
 
 include BlockHelper
-include HashHelper
 
-blockchain = [genesis_block]
+@blockchain = [genesis_block]
 
-p valid_new_block?(genesis_block, genesis_block)
+def http_server
+  get '/blockchain' do
+    content_type :json
+    {"Hello" => "World"}.to_json
+  end
+end
 
+http_server
 
