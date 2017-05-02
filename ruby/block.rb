@@ -1,7 +1,7 @@
 class Block
 
   def initialize(block_index, previous_block_hash, timestamp, data, block_hash)
-    @block_index = blockIndex
+    @block_index = block_index
     @previous_block_hash = previous_block_hash
     @timestamp = timestamp
     @data = data

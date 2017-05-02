@@ -24,7 +24,7 @@ module BlockHelper
   def valid_new_block?(new_block, previous_block)
     conditions = {
       (new_block.block_index == (previous_block.block_index + 1)) => "Invalid index",
-      (previous_block.block_hash == new_block.previous_block_hash) => "Invalid previous block hash"
+      (previous_block.block_hash == new_block.previous_block_hash) => "Invalid previous block hash",
       (calculate_block_hash == new_block.block_hash) => "Invalid block hash"
     }
     conditions.each do |k,v|
