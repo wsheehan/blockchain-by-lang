@@ -8,12 +8,12 @@ module BlockHelper
 
   # New block require latest block info to proceed
   def latest_block(blockchain)
-    blockchain[blockchain.length - 1]
+    blockchain[-1]
   end
 
   # Generate params for new block
-  def generate_next_block(block_data)
-    previous_block = latest_block
+  def generate_next_block(block_data, blockchain)
+    previous_block = latest_block(blockchain)
     block_index = previous_block.block_index + 1
     timestamp = Time.now.to_i.to_s
     block_hash = Digest::SHA256.hexdigest(block_index.to_s, previous_block.block_hash, timestamp, block_data)
